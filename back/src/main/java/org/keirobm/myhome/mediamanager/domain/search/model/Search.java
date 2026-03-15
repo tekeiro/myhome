@@ -1,13 +1,13 @@
 package org.keirobm.myhome.mediamanager.domain.search.model;
 
+import java.util.List;
+
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder(toBuilder = true)
-public class SearchResult {
-    private String choice;
-    private String filename;
-    private int seeds;
-    private double size;
+public class Search {
+    private String queryTerm;
+    private List<SearchResult> results;
 }

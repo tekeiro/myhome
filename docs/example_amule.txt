@@ -1,0 +1,82 @@
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [64.8%]   49/  59     (30) - Downloading - 002.part.met - Auto [Lo] - 9.05 MB/s
+aMulecmd$ cancel F912867BA18B1BA34717F430516B075E
+Processing by hash: F912867BA18B1BA34717F430516B075E
+ > Operation was successful.
+aMulecmd$ show dl
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [67.4%]   49/  59     (30) - Downloading - 002.part.met - Auto [Lo] - 8.92 MB/s
+
+
+aMulecmd$ Download 835
+Download File: 835 Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [90.6%]   55/  55     (21) - Downloading - 002.part.met - Auto [Lo] - 2.15 MB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.7%]   50/  84     (07) - Downloading - 002.part.met - Auto [Lo] - 79.28 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.7%]   50/  84     (07) - Downloading - 002.part.met - Auto [Lo] - 79.18 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.7%]   49/  84     (06) - Downloading - 002.part.met - Auto [Lo] - 70.63 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.7%]   49/  84     (06) - Downloading - 002.part.met - Auto [Lo] - 70.61 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.7%]   49/  84     (06) - Downloading - 002.part.met - Auto [Lo] - 70.62 kB/s
+aMulecmd$ show ul
+ >       8883 pippoaxl Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv 1.04 MB 0 bytes/sec
+ >       8928 Prrrrrrrrrr_88 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv 540 kB 0 bytes/sec
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.8%]   48/  83     (05) - Downloading - 002.part.met - Auto [Lo] - 63.45 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.8%]   48/  83     (05) - Downloading - 002.part.met - Auto [Lo] - 63.32 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.8%]   48/  83     (05) - Downloading - 002.part.met - Auto [Lo] - 63.32 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.8%]   48/  83     (05) - Downloading - 002.part.met - Auto [Lo] - 63.32 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.8%]   48/  83     (05) - Downloading - 002.part.met - Auto [Lo] - 63.32 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
+ > 26A91F061392639342046C2FC47B37B7 Pluribus.1x01.Noi.Siamo.Noi.ITA.ATVP.WEB-DLRip.x264-UBi.mkv
+ >       [99.8%]   47/  83     (02) - Downloading - 002.part.met - Auto [Lo] - 5.12 kB/s
+aMulecmd$ show dl
+ > F912867BA18B1BA34717F430516B075E Pluribus.S01E04.FRENCH.WEBRip.x264.mp4.torrent
+ >       [0.0%]    0/   0          - Waiting - 001.part.met - Auto [Hi]
