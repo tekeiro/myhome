@@ -8,9 +8,13 @@ import lombok.Data;
 @Data
 @Builder(toBuilder = true)
 public class DownloadQueueItem {
+    private Long id;
     private MediaCategory contentType;
     private SearchResultType searchResultType;
     private String hash;
     private String filename;
     private double percentage;
+    private Long filmOrTvShowId;
+    private Integer season;
+    private Integer episode;
 }

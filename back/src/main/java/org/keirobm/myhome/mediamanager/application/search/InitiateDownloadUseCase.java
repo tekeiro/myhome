@@ -3,6 +3,8 @@ package org.keirobm.myhome.mediamanager.application.search;
 
 import org.keirobm.myhome.mediamanager.domain.clients.port.AmuleClientPort;
 import org.keirobm.myhome.mediamanager.domain.downloading.model.AcceptDownloadRequest;
+import org.keirobm.myhome.mediamanager.domain.downloading.model.DownloadQueueItem;
+import org.keirobm.myhome.mediamanager.domain.downloading.port.DownloadQueuePort;
 import org.keirobm.myhome.mediamanager.domain.search.model.SearchResultType;
 import org.keirobm.myhome.mediamanager.domain.watchlist.port.MediaLibraryPort;
 import org.springframework.stereotype.Component;
@@ -19,7 +21,9 @@ public class InitiateDownloadUseCase {
 
     private final AmuleClientPort amuleClientPort;
 
-    public boolean execute(AcceptDownloadRequest request) {
+    private final DownloadQueuePort downloadQueuePort;
+
+    public DownloadQueueItem execute(AcceptDownloadRequest request) {
         final var mediaType = request.getSearchResultType();
         switch (mediaType) {
             case SearchResultType.FILM:
@@ -28,24 +32,34 @@ public class InitiateDownloadUseCase {
                 return this.acceptDownloadRequestForTvShow(request);
             default:
                 log.warn("Unknown media type {} for download request", mediaType);
-                return false;
+                return null;
         }
     }
 
-    private boolean acceptDownloadRequestForTvShow(AcceptDownloadRequest request) {
+    private DownloadQueueItem acceptDownloadRequestForTvShow(AcceptDownloadRequest request) {
         // Search or create tv show (by title, year, season and episode)
-        this.mediaLibraryPort.searchOrCreateTvShow(request.getTitle(), request.getYear(), request.getSeason(), request.getEpisode());
+        final var tvShow =this.mediaLibraryPort.searchOrCreateTvShow(request.getTitle(), request.getYear(), request.getSeason(), request.getEpisode());
         // Upload to amule the search result choice
-        this.amuleClientPort.initiateDownload(request);
-        return true;
+        final var dlItem = this.amuleClientPort.initiateDownload(request);
+        dlItem.toBuilder()
+            .filmOrTvShowId(tvShow.getId())
+            .episode(request.getEpisode())
+            .season(request.getSeason())
+            .build();
+        this.downloadQueuePort.register(dlItem);
+        return dlItem;
     }
 
-    private boolean acceptDownloadRequestForFilm(AcceptDownloadRequest request) {
+    private DownloadQueueItem acceptDownloadRequestForFilm(AcceptDownloadRequest request) {
         // Search or create film (by title and year)
-        this.mediaLibraryPort.searchOrCreateFilm(request.getTitle(), request.getYear());
+        final var film = this.mediaLibraryPort.searchOrCreateFilm(request.getTitle(), request.getYear());
         // Upload to amule the search result choice
-        this.amuleClientPort.initiateDownload(request);
-        return true;
+        final var dlItem = this.amuleClientPort.initiateDownload(request);
+        dlItem.toBuilder()
+            .filmOrTvShowId(film.getId())
+            .build();
+        this.downloadQueuePort.register(dlItem);
+        return dlItem;
     }
 
 }
