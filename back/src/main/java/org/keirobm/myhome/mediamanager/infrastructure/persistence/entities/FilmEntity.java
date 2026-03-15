@@ -3,6 +3,7 @@ package org.keirobm.myhome.mediamanager.infrastructure.persistence.entities;
 import org.keirobm.myhome.shared.BaseEntity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "films")
 public class FilmEntity extends BaseEntity {
 

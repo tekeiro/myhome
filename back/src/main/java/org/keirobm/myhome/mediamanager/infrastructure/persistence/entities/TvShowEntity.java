@@ -6,6 +6,7 @@ import org.keirobm.myhome.shared.BaseEntity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -14,6 +15,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "tv_shows")
 public class TvShowEntity extends BaseEntity {
 

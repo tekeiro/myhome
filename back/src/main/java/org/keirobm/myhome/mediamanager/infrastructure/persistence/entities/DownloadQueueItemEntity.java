@@ -5,6 +5,7 @@ import org.keirobm.myhome.mediamanager.domain.search.model.SearchResultType;
 import org.keirobm.myhome.shared.BaseEntity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
@@ -13,6 +14,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "download_queue_items")
 public class DownloadQueueItemEntity extends BaseEntity {
 

@@ -7,6 +7,7 @@ import org.keirobm.myhome.shared.BaseEntity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -20,6 +21,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @Table(name = "tv_show_seasons")
 public class TvShowSeasonEntity extends BaseAudit {
 
