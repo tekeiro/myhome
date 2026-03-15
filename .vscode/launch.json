@@ -21,7 +21,8 @@
             "name": "MyhomeApplication",
             "request": "launch",
             "mainClass": "org.keirobm.myhome.MyhomeApplication",
-            "projectName": "myhome"
+            "projectName": "myhome",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

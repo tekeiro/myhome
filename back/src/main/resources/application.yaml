@@ -14,3 +14,16 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+
+myhome:
+  amule:
+    host: localhost
+    port: 4712
+    password: ${AMULE_PASS:1234}
+
+logging:
+  charset:
+    console: UTF-8
+  level:
+    root: INFO
+    "org.keirobm.myhome": DEBUG
