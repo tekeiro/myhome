@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("v1/api/media")
+@RequestMapping(value = "v1/api/media", consumes = "application/json", produces = "application/json")
 @RequiredArgsConstructor
 public class MediaLibraryController {
 

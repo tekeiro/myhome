@@ -13,6 +13,7 @@ import org.keirobm.myhome.mediamanager.infrastructure.emuleClient.process.ShowDl
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 @Component
@@ -26,12 +27,14 @@ public class AmuleClientAdapter implements AmuleClientPort {
 
     private final ShowDlProcess showDlProcess;
 
+    @SneakyThrows
     @Override
     public List<SearchResult> search(String queryTerm) {
         log.debug("Searching for: {}", queryTerm);
-        final var output = this.processHelper.executeCommand("Search global " + queryTerm);
+        final var output = this.processHelper.executeCommand("Search global \"" + queryTerm + "\"");
         if (output.getExitCode() == 0) {
             log.debug("Search output: {}", output.getOutput());
+            Thread.sleep(500);
             final var resultOutput = this.processHelper.executeCommand("Results");
             if (resultOutput.getExitCode() == 0) {
                 log.debug("Search results: {}", resultOutput.getOutput());

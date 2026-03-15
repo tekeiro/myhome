@@ -8,5 +8,8 @@ const config: GeneratorConfig = {
     dateType: 'Date',
     enumStyle: 'enum',
   },
+  compilerOptions: {
+    
+  }
 };
 export default config;

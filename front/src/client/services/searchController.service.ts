@@ -25,9 +25,9 @@ export class SearchControllerService {
         return context.set(this.clientContextToken, 'MyHomeApiClient');
     }
 
-    acceptNewSearchResult(acceptDownloadRequest: AcceptDownloadRequest, observe?: 'body', options?: RequestOptions<'blob'>): Observable<DownloadQueueItem>;
-    acceptNewSearchResult(acceptDownloadRequest: AcceptDownloadRequest, observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<DownloadQueueItem>>;
-    acceptNewSearchResult(acceptDownloadRequest: AcceptDownloadRequest, observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<DownloadQueueItem>>;
+    acceptNewSearchResult(acceptDownloadRequest: AcceptDownloadRequest, observe?: 'body', options?: RequestOptions<'json'>): Observable<DownloadQueueItem>;
+    acceptNewSearchResult(acceptDownloadRequest: AcceptDownloadRequest, observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<DownloadQueueItem>>;
+    acceptNewSearchResult(acceptDownloadRequest: AcceptDownloadRequest, observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<DownloadQueueItem>>;
     acceptNewSearchResult(acceptDownloadRequest: AcceptDownloadRequest, observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/search/accept`;
 
@@ -45,7 +45,6 @@ export class SearchControllerService {
         const requestOptions: any = {
             observe: observe as any,
             headers,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)
@@ -54,9 +53,9 @@ export class SearchControllerService {
         return this.httpClient.post(url, acceptDownloadRequest, requestOptions);
     }
 
-    search(q: string, observe?: 'body', options?: RequestOptions<'blob'>): Observable<Array<SearchResult>>;
-    search(q: string, observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<Array<SearchResult>>>;
-    search(q: string, observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<Array<SearchResult>>>;
+    search(q: string, observe?: 'body', options?: RequestOptions<'json'>): Observable<Array<SearchResult>>;
+    search(q: string, observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<Array<SearchResult>>>;
+    search(q: string, observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<Array<SearchResult>>>;
     search(q: string, observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/search`;
 
@@ -76,7 +75,6 @@ export class SearchControllerService {
             observe: observe as any,
             headers,
             params,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)
@@ -85,9 +83,9 @@ export class SearchControllerService {
         return this.httpClient.get(url, requestOptions);
     }
 
-    findAllTvShows(observe?: 'body', options?: RequestOptions<'blob'>): Observable<Array<TvShow>>;
-    findAllTvShows(observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<Array<TvShow>>>;
-    findAllTvShows(observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<Array<TvShow>>>;
+    findAllTvShows(observe?: 'body', options?: RequestOptions<'json'>): Observable<Array<TvShow>>;
+    findAllTvShows(observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<Array<TvShow>>>;
+    findAllTvShows(observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<Array<TvShow>>>;
     findAllTvShows(observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/search/tvShows`;
 
@@ -101,7 +99,6 @@ export class SearchControllerService {
         const requestOptions: any = {
             observe: observe as any,
             headers,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)
@@ -110,9 +107,9 @@ export class SearchControllerService {
         return this.httpClient.get(url, requestOptions);
     }
 
-    findAllFilms(observe?: 'body', options?: RequestOptions<'blob'>): Observable<Array<Film>>;
-    findAllFilms(observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<Array<Film>>>;
-    findAllFilms(observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<Array<Film>>>;
+    findAllFilms(observe?: 'body', options?: RequestOptions<'json'>): Observable<Array<Film>>;
+    findAllFilms(observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<Array<Film>>>;
+    findAllFilms(observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<Array<Film>>>;
     findAllFilms(observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/search/films`;
 
@@ -126,7 +123,6 @@ export class SearchControllerService {
         const requestOptions: any = {
             observe: observe as any,
             headers,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)

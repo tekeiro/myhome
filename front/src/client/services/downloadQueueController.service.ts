@@ -25,9 +25,9 @@ export class DownloadQueueControllerService {
         return context.set(this.clientContextToken, 'MyHomeApiClient');
     }
 
-    getDownloadQueue(observe?: 'body', options?: RequestOptions<'blob'>): Observable<Array<DownloadQueueItem>>;
-    getDownloadQueue(observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<Array<DownloadQueueItem>>>;
-    getDownloadQueue(observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<Array<DownloadQueueItem>>>;
+    getDownloadQueue(observe?: 'body', options?: RequestOptions<'json'>): Observable<Array<DownloadQueueItem>>;
+    getDownloadQueue(observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<Array<DownloadQueueItem>>>;
+    getDownloadQueue(observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<Array<DownloadQueueItem>>>;
     getDownloadQueue(observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/queue`;
 
@@ -41,7 +41,6 @@ export class DownloadQueueControllerService {
         const requestOptions: any = {
             observe: observe as any,
             headers,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)

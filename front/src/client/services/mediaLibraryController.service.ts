@@ -25,9 +25,9 @@ export class MediaLibraryControllerService {
         return context.set(this.clientContextToken, 'MyHomeApiClient');
     }
 
-    listTvShows(pageRequest: PageRequest, observe?: 'body', options?: RequestOptions<'blob'>): Observable<PageResultTvShow>;
-    listTvShows(pageRequest: PageRequest, observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<PageResultTvShow>>;
-    listTvShows(pageRequest: PageRequest, observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<PageResultTvShow>>;
+    listTvShows(pageRequest: PageRequest, observe?: 'body', options?: RequestOptions<'json'>): Observable<PageResultTvShow>;
+    listTvShows(pageRequest: PageRequest, observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<PageResultTvShow>>;
+    listTvShows(pageRequest: PageRequest, observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<PageResultTvShow>>;
     listTvShows(pageRequest: PageRequest, observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/media/tvShows`;
 
@@ -47,7 +47,6 @@ export class MediaLibraryControllerService {
             observe: observe as any,
             headers,
             params,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)
@@ -56,9 +55,9 @@ export class MediaLibraryControllerService {
         return this.httpClient.get(url, requestOptions);
     }
 
-    createNewTvShow(newTvShowRequest: NewTvShowRequest, observe?: 'body', options?: RequestOptions<'blob'>): Observable<TvShow>;
-    createNewTvShow(newTvShowRequest: NewTvShowRequest, observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<TvShow>>;
-    createNewTvShow(newTvShowRequest: NewTvShowRequest, observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<TvShow>>;
+    createNewTvShow(newTvShowRequest: NewTvShowRequest, observe?: 'body', options?: RequestOptions<'json'>): Observable<TvShow>;
+    createNewTvShow(newTvShowRequest: NewTvShowRequest, observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<TvShow>>;
+    createNewTvShow(newTvShowRequest: NewTvShowRequest, observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<TvShow>>;
     createNewTvShow(newTvShowRequest: NewTvShowRequest, observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/media/tvShows`;
 
@@ -76,7 +75,6 @@ export class MediaLibraryControllerService {
         const requestOptions: any = {
             observe: observe as any,
             headers,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)
@@ -85,9 +83,9 @@ export class MediaLibraryControllerService {
         return this.httpClient.post(url, newTvShowRequest, requestOptions);
     }
 
-    listFilms(pageRequest: PageRequest, observe?: 'body', options?: RequestOptions<'blob'>): Observable<PageResultFilm>;
-    listFilms(pageRequest: PageRequest, observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<PageResultFilm>>;
-    listFilms(pageRequest: PageRequest, observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<PageResultFilm>>;
+    listFilms(pageRequest: PageRequest, observe?: 'body', options?: RequestOptions<'json'>): Observable<PageResultFilm>;
+    listFilms(pageRequest: PageRequest, observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<PageResultFilm>>;
+    listFilms(pageRequest: PageRequest, observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<PageResultFilm>>;
     listFilms(pageRequest: PageRequest, observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/media/films`;
 
@@ -107,7 +105,6 @@ export class MediaLibraryControllerService {
             observe: observe as any,
             headers,
             params,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)
@@ -116,9 +113,9 @@ export class MediaLibraryControllerService {
         return this.httpClient.get(url, requestOptions);
     }
 
-    createNewFilm(newFilmRequest: NewFilmRequest, observe?: 'body', options?: RequestOptions<'blob'>): Observable<Film>;
-    createNewFilm(newFilmRequest: NewFilmRequest, observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<Film>>;
-    createNewFilm(newFilmRequest: NewFilmRequest, observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<Film>>;
+    createNewFilm(newFilmRequest: NewFilmRequest, observe?: 'body', options?: RequestOptions<'json'>): Observable<Film>;
+    createNewFilm(newFilmRequest: NewFilmRequest, observe?: 'response', options?: RequestOptions<'json'>): Observable<HttpResponse<Film>>;
+    createNewFilm(newFilmRequest: NewFilmRequest, observe?: 'events', options?: RequestOptions<'json'>): Observable<HttpEvent<Film>>;
     createNewFilm(newFilmRequest: NewFilmRequest, observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/media/films`;
 
@@ -136,7 +133,6 @@ export class MediaLibraryControllerService {
         const requestOptions: any = {
             observe: observe as any,
             headers,
-            responseType: 'blob' as 'blob',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)

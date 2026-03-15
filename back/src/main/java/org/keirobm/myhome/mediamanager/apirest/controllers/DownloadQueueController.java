@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
-@RequestMapping("v1/api/queue")
+@RequestMapping(value = "v1/api/queue", consumes = "application/json", produces = "application/json")
 @RequiredArgsConstructor
 public class DownloadQueueController {
 

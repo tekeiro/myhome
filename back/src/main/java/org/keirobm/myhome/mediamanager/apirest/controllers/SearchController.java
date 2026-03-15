@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/v1/api/search")
+@RequestMapping(value = "/v1/api/search", produces = "application/json")
 @RequiredArgsConstructor
 public class SearchController {
 

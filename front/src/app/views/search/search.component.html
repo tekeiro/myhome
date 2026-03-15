@@ -1,0 +1,54 @@
+<c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+        <!-- Search -->
+        <c-card class="mb-4">
+            <c-card-body>
+                <c-input-group>
+                    <input cFormControl type="text" [(ngModel)]="searchText" />
+                    <button cButton type="button" (click)="doSearch()">
+                        Buscar
+                    </button>
+                </c-input-group>
+            </c-card-body>
+        </c-card>
+        <!-- Search -->
+
+        <!-- Search Results -->
+        @if(searchResults.length > 0) {
+            <c-card class="mb-4">
+                <c-card-header>Resultados</c-card-header>
+                <c-card-body>
+                    <table
+                        [hover]="true"
+                        [responsive]="true"
+                        [striped]="true"
+                        align="middle"
+                        cTable
+                        class="mb-0 border"
+                        >
+                        <thead class="text-nowrap text-truncate">
+                        <tr>
+                            <th class="bg-body-tertiary text-center">N.</th>
+                            <th class="bg-body-tertiary">Nombre</th>
+                            <th class="bg-body-tertiary text-center">Nº Seeds</th>
+                            <th class="bg-body-tertiary">Tamaño</th>
+                        </tr>
+                        <tbody>
+                            @for (searchResult of searchResults; track searchResult; let i = $index) {
+                                <tr>
+                                    <td>{{searchResult.choice}}</td>
+                                    <td>{{searchResult.filename}}</td>
+                                    <td>{{searchResult.seeds}}</td>
+                                    <td>{{searchResult.size}}Mb</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </c-card-body>
+            </c-card>
+        }
+        <!-- Search Results -->
+
+
+    </c-col>
+</c-row>

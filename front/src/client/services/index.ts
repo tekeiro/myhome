@@ -11,4 +11,3 @@ export { DownloadQueueControllerService } from "./downloadQueueController.servic
 export { MediaLibraryControllerService } from "./mediaLibraryController.service";
 export { SearchControllerService } from "./searchController.service";
 export { TestControllerService } from "./testController.service";
-export { WatchlistItemControllerService } from "./watchlistItemController.service";

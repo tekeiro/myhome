@@ -17,8 +17,8 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'watchlist',
-        loadChildren: () => import('./views/watchlist/routes').then((m) => m.routes)
+        path: 'search',
+        loadChildren: () => import('./views/search/routes').then((m) => m.routes)
       },
       // --- TEMPLATE
       {

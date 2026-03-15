@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/v1/api/test")
+@RequestMapping(value = "/v1/api/test", consumes = "application/json", produces = "application/json")
 @RequiredArgsConstructor
 public class TestController {
 

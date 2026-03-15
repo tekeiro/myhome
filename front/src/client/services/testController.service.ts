@@ -25,9 +25,9 @@ export class TestControllerService {
         return context.set(this.clientContextToken, 'MyHomeApiClient');
     }
 
-    testSearch(q: string, observe?: 'body', options?: RequestOptions<'blob'>): Observable<string>;
-    testSearch(q: string, observe?: 'response', options?: RequestOptions<'blob'>): Observable<HttpResponse<string>>;
-    testSearch(q: string, observe?: 'events', options?: RequestOptions<'blob'>): Observable<HttpEvent<string>>;
+    testSearch(q: string, observe?: 'body', options?: RequestOptions<'text'>): Observable<string>;
+    testSearch(q: string, observe?: 'response', options?: RequestOptions<'text'>): Observable<HttpResponse<string>>;
+    testSearch(q: string, observe?: 'events', options?: RequestOptions<'text'>): Observable<HttpEvent<string>>;
     testSearch(q: string, observe?: 'body' | 'events' | 'response', options?: RequestOptions<'arraybuffer' | 'blob' | 'json' | 'text'>): Observable<any> {
         const url = `${this.basePath}/v1/api/test/search`;
 
@@ -47,7 +47,7 @@ export class TestControllerService {
             observe: observe as any,
             headers,
             params,
-            responseType: 'blob' as 'blob',
+            responseType: 'text' as 'text',
             reportProgress: options?.reportProgress,
             withCredentials: options?.withCredentials,
             context: this.createContextWithClientId(options?.context)
