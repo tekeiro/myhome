@@ -9,4 +9,6 @@ public interface FilmEntityMapper {
 
     Film toDomain(FilmEntity entity);
 
+    FilmEntity toEntity(Film film);
+
 }

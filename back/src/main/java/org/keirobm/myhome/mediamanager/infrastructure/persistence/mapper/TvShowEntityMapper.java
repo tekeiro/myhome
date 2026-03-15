@@ -9,4 +9,6 @@ public interface TvShowEntityMapper {
 
     TvShow toDomain(TvShowEntity entity);
 
+    TvShowEntity toEntity(TvShow show);
+
 }

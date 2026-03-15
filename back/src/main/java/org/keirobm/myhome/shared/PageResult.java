@@ -17,7 +17,11 @@ public class PageResult<T> {
 
     private List<T> content;
 
-    public static <T> PageResult<T> of(List<T> content, Page pageInfo) {
+    public static <T> PageResult<T> ofPage(Page<T> page) {
+        return of(page.getContent(), page);
+    }
+
+    public static <T> PageResult<T> of(List<T> content, Page<T> pageInfo) {
         return PageResult.<T>builder()
             .totalPages(pageInfo.getTotalPages())
             .totalElements(pageInfo.getTotalElements())

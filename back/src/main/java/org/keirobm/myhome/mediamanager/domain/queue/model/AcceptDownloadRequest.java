@@ -1,4 +1,4 @@
-package org.keirobm.myhome.mediamanager.domain.downloading.model;
+package org.keirobm.myhome.mediamanager.domain.queue.model;
 
 import org.keirobm.myhome.mediamanager.domain.search.model.SearchResult;
 import org.keirobm.myhome.mediamanager.domain.search.model.SearchResultType;

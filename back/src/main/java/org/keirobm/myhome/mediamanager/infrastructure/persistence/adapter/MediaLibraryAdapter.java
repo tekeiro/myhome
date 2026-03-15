@@ -1,5 +1,8 @@
 package org.keirobm.myhome.mediamanager.infrastructure.persistence.adapter;
 
+import java.util.List;
+import java.util.stream.StreamSupport;
+
 import org.keirobm.myhome.mediamanager.application.search.NewSearchUseCase;
 import org.keirobm.myhome.mediamanager.domain.watchlist.model.Film;
 import org.keirobm.myhome.mediamanager.domain.watchlist.model.TvShow;
@@ -14,6 +17,8 @@ import org.keirobm.myhome.mediamanager.infrastructure.persistence.repositories.F
 import org.keirobm.myhome.mediamanager.infrastructure.persistence.repositories.TvShowEpisodeRepository;
 import org.keirobm.myhome.mediamanager.infrastructure.persistence.repositories.TvShowRepository;
 import org.keirobm.myhome.mediamanager.infrastructure.persistence.repositories.TvShowSeasonRepository;
+import org.keirobm.myhome.shared.PageRequest;
+import org.keirobm.myhome.shared.PageResult;
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
@@ -89,6 +94,46 @@ public class MediaLibraryAdapter implements MediaLibraryPort {
                 this.tvShowSeasonRepository.save(seasonEntity);
                 return newEpisode;
             });
+    }
+
+    @Override
+    public List<Film> findAllFilms() {
+        return StreamSupport.stream(this.filmRepository.findAll().spliterator(), false)
+            .map(this.filmEntityMapper::toDomain)
+            .toList();
+    }
+
+    @Override
+    public List<TvShow> findAllTvShows() {
+        return StreamSupport.stream(this.tvShowRepository.findAll().spliterator(), false)
+            .map(this.tvShowEntityMapper::toDomain)
+            .toList();
+    }
+
+    @Override
+    public PageResult<Film> listFilms(PageRequest pageRequest) {
+        final var pageOfFilms = this.filmRepository.findAll(pageRequest.toPageable())
+            .map(this.filmEntityMapper::toDomain);
+        return PageResult.ofPage(pageOfFilms);
+    }
+
+    @Override
+    public PageResult<TvShow> listTvShows(PageRequest pageRequest) {
+        final var pageOfShows = this.tvShowRepository.findAll(pageRequest.toPageable())
+            .map(this.tvShowEntityMapper::toDomain);
+        return PageResult.ofPage(pageOfShows);
+    }
+
+    @Override
+    public Film createOrUpdate(Film film) {
+        final var entity = this.filmEntityMapper.toEntity(film);
+        return this.filmEntityMapper.toDomain(this.filmRepository.save(entity));
+    }
+
+    @Override
+    public TvShow createOrUpdate(TvShow tvShow) {
+        final var entity = this.tvShowEntityMapper.toEntity(tvShow);
+        return this.tvShowEntityMapper.toDomain(this.tvShowRepository.save(entity));
     }
 
 }

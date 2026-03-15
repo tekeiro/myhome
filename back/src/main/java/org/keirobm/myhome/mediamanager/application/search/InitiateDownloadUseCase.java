@@ -2,9 +2,9 @@ package org.keirobm.myhome.mediamanager.application.search;
 
 
 import org.keirobm.myhome.mediamanager.domain.clients.port.AmuleClientPort;
-import org.keirobm.myhome.mediamanager.domain.downloading.model.AcceptDownloadRequest;
-import org.keirobm.myhome.mediamanager.domain.downloading.model.DownloadQueueItem;
-import org.keirobm.myhome.mediamanager.domain.downloading.port.DownloadQueuePort;
+import org.keirobm.myhome.mediamanager.domain.queue.model.AcceptDownloadRequest;
+import org.keirobm.myhome.mediamanager.domain.queue.model.DownloadQueueItem;
+import org.keirobm.myhome.mediamanager.domain.queue.port.DownloadQueuePort;
 import org.keirobm.myhome.mediamanager.domain.search.model.SearchResultType;
 import org.keirobm.myhome.mediamanager.domain.watchlist.port.MediaLibraryPort;
 import org.springframework.stereotype.Component;

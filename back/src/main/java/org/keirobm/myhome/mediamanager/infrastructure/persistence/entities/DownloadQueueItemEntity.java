@@ -1,6 +1,6 @@
 package org.keirobm.myhome.mediamanager.infrastructure.persistence.entities;
 
-import org.keirobm.myhome.mediamanager.domain.downloading.model.MediaCategory;
+import org.keirobm.myhome.mediamanager.domain.queue.model.MediaCategory;
 import org.keirobm.myhome.mediamanager.domain.search.model.SearchResultType;
 import org.keirobm.myhome.shared.BaseEntity;
 

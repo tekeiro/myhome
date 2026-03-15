@@ -1,4 +1,4 @@
-package org.keirobm.myhome.mediamanager.domain.downloading.model;
+package org.keirobm.myhome.mediamanager.domain.queue.model;
 
 import org.keirobm.myhome.mediamanager.domain.search.model.SearchResultType;
 
@@ -17,4 +17,17 @@ public class DownloadQueueItem {
     private Long filmOrTvShowId;
     private Integer season;
     private Integer episode;
+
+    private double mbSpeed;
+    private int leachers;
+    private int seeders;
+
+    public void markAsCompleted(boolean completed) {
+        if (completed) {
+            this.percentage = 100.0;
+        }
+    }
+    public boolean isCompleted() {
+        return this.percentage == 100.0;
+    }
 }

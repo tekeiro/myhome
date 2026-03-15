@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.keirobm.myhome.mediamanager.domain.clients.config.AmuleConfig;
 import org.keirobm.myhome.mediamanager.domain.clients.port.AmuleClientPort;
-import org.keirobm.myhome.mediamanager.domain.downloading.model.AcceptDownloadRequest;
-import org.keirobm.myhome.mediamanager.domain.downloading.model.DownloadQueueItem;
+import org.keirobm.myhome.mediamanager.domain.queue.model.AcceptDownloadRequest;
+import org.keirobm.myhome.mediamanager.domain.queue.model.DownloadQueueItem;
 import org.keirobm.myhome.mediamanager.domain.search.model.SearchResult;
 import org.keirobm.myhome.mediamanager.infrastructure.emuleClient.helper.AmuleProcessHelper;
 import org.keirobm.myhome.mediamanager.infrastructure.emuleClient.process.ParseSearchResults;
@@ -68,6 +68,21 @@ public class AmuleClientAdapter implements AmuleClientPort {
             log.error("Failed to initiate download with exit code {}: {}", addResult.getExitCode(), addResult.getError());
             throw new RuntimeException("Failed to initiate download: " + addResult.getError());
         }
+    }
+
+    @Override
+    public List<DownloadQueueItem> getDownloadQueue() {
+        final var dlItems = this.showDlProcess.execute();
+        return dlItems.stream().map(dlItem -> {
+            return DownloadQueueItem.builder()
+                .hash(dlItem.getHash())
+                .percentage(dlItem.getPercentage())
+                .filename(dlItem.getFilename())
+                .mbSpeed(dlItem.getMbSpeed())
+                .leachers(dlItem.getLeachers())
+                .seeders(dlItem.getSeeders())
+                .build();
+        }).toList();
     }
 
 }
