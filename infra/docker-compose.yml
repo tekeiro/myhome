@@ -1,0 +1,30 @@
+services:
+  postgresql:
+    image: postgres:15
+    container_name: myhome-postgresql
+    environment:
+      POSTGRES_USER: myhome
+      POSTGRES_PASSWORD: myhome
+      POSTGRES_DB: myhome
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    networks:
+      - myhome
+  adminer:
+    image: dpage/pgadmin4:latest
+    container_name: myhome-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: tekeiro@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: myhome
+    ports:
+      - "8081:80"
+    networks:
+      - myhome
+    depends_on:
+      - postgresql
+
+networks:
+  myhome:
+    driver: bridge
